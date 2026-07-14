@@ -2,7 +2,7 @@ export default function Projects() {
   const projects = [
     {
       title: "Linkify (Linktree Clone)",
-      desc: "Full-stack link-in-bio platform with analytics, custom themes, and user dashboard.",
+      desc: "Link in bio platform.",
       tech: ["Next.js", "MongoDB", "Tailwind"],
       live: "https://linkify-1d1k.vercel.app/",
       github: "https://github.com/komalrana1341997/Linkify"
@@ -11,7 +11,7 @@ export default function Projects() {
       title: "Business Landing page",
       desc: "Track daily expenses with real-time updates and a clean, responsive UI.",
       tech: ["React", "Tailwind"],
-      live: "https://webnexa-eta.vercel.app/#work",
+      live: "https://webnexa-eta.vercel.app/",
       github: "https://github.com/komalrana1341997/webnexa"
     },
     {
@@ -20,6 +20,13 @@ export default function Projects() {
       tech: ["Next.js", "MongoDB"],
       live: "https://url-shortener-komal-rana.vercel.app/",
       github: "https://github.com/komalrana1341997/URL---Shortener"
+    },
+    {
+      title: "Linkos",
+      desc: "Full-stack link-in-bio platform with analytics, custom themes, and user dashboard.",
+      tech: ["Next.js", "MongoDB", "Tailwind"],
+      live: "https://linkos-chi.vercel.app/",
+      github: "https://github.com/komalrana1341997/Linkos"
     }
   ];
 
