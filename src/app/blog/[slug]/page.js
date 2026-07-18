@@ -2,15 +2,15 @@ import { notFound } from "next/navigation";
 import { posts } from "@/lib/posts";
 import ReactMarkdown from "react-markdown";
 
-export default async function BlogPost({ params }) {
-    const { slug } = await params;
+export default function BlogPost({ params }) {
+    const { slug } =  params;
 
     const post = posts.find((p) => p.slug === slug);
 
 
     if (!post) return notFound();
 
-    return (
+     return (
         <div className="max-w-3xl mx-auto py-16 px-6">
             <h1 className="text-3xl font-bold mb-6">{post.title}</h1>
 
@@ -37,8 +37,17 @@ export default async function BlogPost({ params }) {
 }
 
 // ✅ SEO optimization
-export function generateStaticParams() {
-    return posts.map((post) => ({
-        slug: post.slug,
-    }));
+export function generateMetadata({ params }) {
+    const post = posts.find((p) => p.slug === params.slug);
+
+    if (!post) {
+        return {
+            title: "Blog Not Found",
+        };
+    }
+
+    return {
+        title: post.title,
+        description: post.description || "Blog post",
+    };
 }
