@@ -24,3 +24,26 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.blog-content h1 {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.blog-content h2 {
+  font-size: 1.5rem;
+  margin-top: 16px;
+}
+
+.blog-content p {
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+.blog-content ul {
+  padding-left: 20px;
+}
+
+.blog-content li {
+  margin: 6px 0;
+}
