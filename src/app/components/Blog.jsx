@@ -1,21 +1,9 @@
 import Link from "next/link";
+import { posts } from "../../lib/posts";
+
 
 export default function Blog() {
-  const posts = [
-    {
-      slug: "react-speed",
-      title: "Make React Website Super Fast 🚀",
-      desc: "Speed optimization tips using Next.js & performance tricks.",
-      date: "July 2026",
-    },
-    {
-      slug: "seo-guide",
-      title: "SEO Guide for Developers 📈",
-      desc: "Learn how to rank your website on Google easily.",
-      date: "July 2026",
-    },
-  ];
-
+  
   return (
     <section className="bg-pink-100 py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
@@ -34,7 +22,7 @@ export default function Blog() {
 
           {posts.map((post, index) => (
             <div
-              key={index}
+            key={post.slug}
               className="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-xl transition hover:-translate-y-2"
             >
               <p className="text-sm text-gray-400 mb-2">

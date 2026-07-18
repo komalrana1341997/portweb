@@ -1,41 +1,46 @@
+import { posts } from "@/lib/posts";
+
+
 export default function sitemap() {
-     const baseUrl = "https://portweb-drab.vercel.app";
+  const baseUrl = "https://portweb-drab.vercel.app";
 
-  const blogs = [
-    "react-speed",
-    "seo-guide",
-  ];
+ const blogUrls = posts.map((post) => ({
+  url: `${baseUrl}/blog/${post.slug}`,
+  lastModified: new Date(post.date || Date.now()),
+}));
 
-  const blogUrls = blogs.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
-  }));
+console.log("FINAL SITEMAP:", [
+  { url: `${baseUrl}` },
+  ...blogUrls,
+]);
 
   return [
     {
-      url: "https://portweb-drab.vercel.app",
+      url: `${baseUrl}`,
       lastModified: new Date(),
     },
     {
-      url: "https://portweb-drab.vercel.app/about",
-      lastModified: new Date(),
-    },
-   
-    {
-      url: "https://portweb-drab.vercel.app/services",
+      url: `${baseUrl}/about`,
       lastModified: new Date(),
     },
     {
-      url: "https://portweb-drab.vercel.app/project",
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
     },
     {
-      url: "https://portweb-drab.vercel.app/blog",
+      url: `${baseUrl}/projects`,
       lastModified: new Date(),
     },
     {
-      url: "https://portweb-drab.vercel.app/contact",
+      url: `${baseUrl}/blog`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+    },
+
+    // ✅ THIS WAS MISSING
+    ...blogUrls,
   ];
 }
