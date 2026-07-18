@@ -12,13 +12,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://portweb-drab.vercel.app"),
+
   title: {
-    default: "Komal Rana | Full Stack Developer",
+    default: "Komal Rana | Web Developer",
     template: "%s | Komal Rana",
   },
 
+   verification: {
+    google: "Xv-xvAhWqv3_E1s2",
+  },
+
   description:
-    "Komal Rana is a full stack developer specializing in Next.js, React, and MongoDB. Explore projects, skills, and get in touch for freelance work, collaborations, and job opportunities.",
+    "Komal Rana is a full stack developer specializing in Next.js, React, MongoDB and SEO optimized websites. Explore projects, skills, and get in touch for freelance work, collaborations, and job opportunities.",
 
   keywords: [
     "Komal Rana",
@@ -31,19 +37,20 @@ export const metadata = {
     "Backend Developer",
     "Freelance Developer",
     "JavaScript Developer",
+     "seo websites",
   ],
 
   authors: [{ name: "Komal Rana" }],
   creator: "Komal Rana",
 
-  metadataBase: new URL("https://your-vercel-url.vercel.app"), // 🔥 replace with your real domain
+  metadataBase: new URL("https://portweb-drab.vercel.app"), // 🔥 replace with your real domain
 
   openGraph: {
     title: "Komal Rana | Full Stack Developer Portfolio",
     description:
       "Explore modern web applications built by Komal Rana using Next.js, React, and MongoDB. Available for freelance and collaboration.",
-    url: "https://your-vercel-url.vercel.app",
-    siteName: "Komal Rana Portfolio",
+    url: "https://portweb-drab.vercel.app",
+    siteName: "Komal Portfolio",
     images: [
       {
         url: "/favicon.jpg", // 🔥 add image in public folder
@@ -61,7 +68,7 @@ export const metadata = {
     title: "Komal Rana | Full Stack Developer",
     description:
       "Building modern web apps with Next.js, React, and MongoDB. Check out my portfolio and projects.",
-    images: ["/og-image.png"],
+    images: ["/favicon.jpg"],
   },
 
   robots: {

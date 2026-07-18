@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 bg-[#0f0f0f] text-white">
+    <section id="about" className="py-24 px-6 bg-white/50 text-black">
       <div className="max-w-4xl mx-auto text-center">
 
         {/* Main Identity */}
@@ -9,13 +9,13 @@ export default function About() {
         </h2>
 
         {/* Short Bio */}
-        <p className="text-gray-300 text-lg leading-relaxed mb-6">
+        <p className="text-gray-600 text-lg leading-relaxed mb-6">
           I build fast, scalable, and clean web applications using 
-          <span className="text-white font-medium"> React, Next.js, Node.js, and MongoDB</span>.
+          <span className="text-black font-medium"> React, Next.js, Node.js, and MongoDB</span>.
         </p>
 
         {/* Value Statement */}
-        <p className="text-gray-400 leading-relaxed mb-10">
+        <p className="text-gray-600 leading-relaxed mb-10">
           I turn ideas into real-world products with a focus on performance, simplicity, and user experience.
         </p>
 

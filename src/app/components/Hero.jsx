@@ -28,14 +28,14 @@ export default function Hero() {
 
           <div className="flex gap-4">
             <a
-              href="#projects"
+              href="/projects"
               className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 rounded-xl font-medium hover:scale-105 transition"
             >
               View Work
             </a>
 
             <a
-              href="#contact"
+              href="/contact"
               className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 rounded-xl font-medium hover:scale-105 transition"
             >
               Hire Me
