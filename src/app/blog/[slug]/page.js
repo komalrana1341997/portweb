@@ -10,7 +10,7 @@ export default function BlogPost({ params }) {
 
     if (!post) return notFound();
 
-     return (
+    return (
         <div className="max-w-3xl mx-auto py-16 px-6">
             <h1 className="text-3xl font-bold mb-6">{post.title}</h1>
 
@@ -37,14 +37,18 @@ export default function BlogPost({ params }) {
 }
 
 // ✅ SEO optimization
+export function generateStaticParams() {
+    console.log("POSTS:", posts); // 👈 ADD THIS
+    return posts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
+// ✅ SEO
 export function generateMetadata({ params }) {
     const post = posts.find((p) => p.slug === params.slug);
 
-    if (!post) {
-        return {
-            title: "Blog Not Found",
-        };
-    }
+    if (!post) return { title: "Blog Not Found" };
 
     return {
         title: post.title,
