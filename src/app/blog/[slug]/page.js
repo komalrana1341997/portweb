@@ -2,10 +2,12 @@ import { notFound } from "next/navigation";
 import { posts } from "@/lib/posts";
 import ReactMarkdown from "react-markdown";
 
-export default function BlogPost({ params }) {
-    const { slug } =  params;
+export default async function BlogPost({ params }) {
+    const { slug } = await params;
 
     const post = posts.find((p) => p.slug === slug);
+    console.log("POSTS:", posts);
+    console.log("SLUG:", slug);
 
 
     if (!post) return notFound();
@@ -37,21 +39,27 @@ export default function BlogPost({ params }) {
 }
 
 // ✅ SEO optimization
+// ✅ Static paths
 export function generateStaticParams() {
-    console.log("POSTS:", posts); // 👈 ADD THIS
-    return posts.map((post) => ({
-        slug: post.slug,
-    }));
+  console.log("POSTS:", posts);
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
-// ✅ SEO
-export function generateMetadata({ params }) {
-    const post = posts.find((p) => p.slug === params.slug);
+// ✅ SEO metadata
+export async function generateMetadata({ params }) {
+  const { slug } = await params;   // ✅ FIX
 
-    if (!post) return { title: "Blog Not Found" };
+  const post = posts.find((p) => p.slug === slug); // ✅ FIX
 
-    return {
-        title: post.title,
-        description: post.description || "Blog post",
-    };
+  if (!post) {
+    return { title: "Blog Not Found" };
+  }
+
+  return {
+    title: post.title,
+    description: post.desc || "Blog post", // ⚠️ you used desc not description
+  };
 }
